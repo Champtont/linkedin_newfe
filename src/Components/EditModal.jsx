@@ -19,6 +19,11 @@ function EditModal({ data }) {
   const [selectedFile, setselectedFile] = useState();
   const [isFilePicked, setisFilePicked] = useState(false);
 
+  //endpoint stuff
+  const userBaseEndPoint = "http://localhost:3002/users";
+  const thisUser = "/63ce8b0e38f02b88b50f552f";
+  const postBaseEndPoint = "http://localhost:3002/posts";
+
   const changeFileHandler = (event) => {
     setselectedFile(event.target.files[0]);
     setisFilePicked(true);
@@ -75,11 +80,11 @@ function EditModal({ data }) {
       body: JSON.stringify(user),
       headers: {
         "Content-type": "application/json",
-        Authorization:
-          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mzk2ZjBhOWM5NmRmYjAwMTUyMWE1YmMiLCJpYXQiOjE2NzA4MzYzOTMsImV4cCI6MTY3MjA0NTk5M30.tjYtW0usDncqSVyv5tqHhm6jzx297N87wMwUmb9BuAs",
+        /*Authorization:
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mzk2ZjBhOWM5NmRmYjAwMTUyMWE1YmMiLCJpYXQiOjE2NzA4MzYzOTMsImV4cCI6MTY3MjA0NTk5M30.tjYtW0usDncqSVyv5tqHhm6jzx297N87wMwUmb9BuAs",*/
       },
     };
-    const fetchURL = "https://striveschool-api.herokuapp.com/api/profile/";
+    const fetchURL = userBaseEndPoint + thisUser;
 
     try {
       let response = await fetch(fetchURL, options);
@@ -89,15 +94,16 @@ function EditModal({ data }) {
         let usersData = await response.json();
 
         if (isFilePicked) {
-          const url = `https://striveschool-api.herokuapp.com/api/profile/${usersData._id}/picture`;
+          const url = userBaseEndPoint + thisUser + `/profilePic`;
+          console.log(url);
           const formData = new FormData();
-          formData.append("profile", selectedFile);
+          formData.append("profilePic", selectedFile);
           const config = {
             method: "POST",
             headers: {
               "content-Type": "multipart/form-data",
-              Authorization:
-                "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mzk2ZjBhOWM5NmRmYjAwMTUyMWE1YmMiLCJpYXQiOjE2NzA4MzYzOTMsImV4cCI6MTY3MjA0NTk5M30.tjYtW0usDncqSVyv5tqHhm6jzx297N87wMwUmb9BuAs",
+              /*Authorization:
+                "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mzk2ZjBhOWM5NmRmYjAwMTUyMWE1YmMiLCJpYXQiOjE2NzA4MzYzOTMsImV4cCI6MTY3MjA0NTk5M30.tjYtW0usDncqSVyv5tqHhm6jzx297N87wMwUmb9BuAs",*/
             },
           };
           axios.post(url, formData, config).then((response) => {
