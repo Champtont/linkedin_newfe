@@ -22,7 +22,6 @@ function EditModal({ data }) {
   //endpoint stuff
   const userBaseEndPoint = "http://localhost:3002/users";
   const thisUser = "/63ce8b0e38f02b88b50f552f";
-  const postBaseEndPoint = "http://localhost:3002/posts";
 
   const changeFileHandler = (event) => {
     setselectedFile(event.target.files[0]);

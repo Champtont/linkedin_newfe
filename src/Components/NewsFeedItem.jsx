@@ -23,7 +23,7 @@ const NewsFeedItem = ({ post }) => {
       setliked(true);
     }
   };
-
+  console.log("THIS IS WHAT YOU CAME FOR: " + post.user.image);
   return (
     <>
       <div className="news-feed-post mt-3">
@@ -47,8 +47,8 @@ const NewsFeedItem = ({ post }) => {
               <BsDot className="mt-1" /> <small>3rd+</small>
             </div>
             <div>
-              <small>{post.user.title}</small> <BsDash className="mt-1" />{" "}
-              <small>{post.user.email}</small>
+              <small>{post.user.username}</small> <BsDash className="mt-1" />{" "}
+              <small>{post.user.title}</small>
             </div>
           </div>
         </Row>

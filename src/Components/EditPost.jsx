@@ -21,6 +21,9 @@ import {
 import { BsPencil } from "react-icons/bs";
 import { useEffect } from "react";
 
+//endpoint stuff
+const postBaseEndPoint = "http://localhost:3002/posts";
+
 function EditPost({ post }) {
   const dispatch = useDispatch();
   const currentPost = useSelector((state) => state.posts.posts.currentPost);
@@ -67,11 +70,11 @@ function EditPost({ post }) {
       body: JSON.stringify(editedPost),
       headers: {
         "Content-type": "application/json",
-        Authorization:
-          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mzk2ZjBhOWM5NmRmYjAwMTUyMWE1YmMiLCJpYXQiOjE2NzA4MzYzOTMsImV4cCI6MTY3MjA0NTk5M30.tjYtW0usDncqSVyv5tqHhm6jzx297N87wMwUmb9BuAs",
+        /*Authorization:
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mzk2ZjBhOWM5NmRmYjAwMTUyMWE1YmMiLCJpYXQiOjE2NzA4MzYzOTMsImV4cCI6MTY3MjA0NTk5M30.tjYtW0usDncqSVyv5tqHhm6jzx297N87wMwUmb9BuAs",*/
       },
     };
-    const fetchURL = `https://striveschool-api.herokuapp.com/api/posts/${postId}`;
+    const fetchURL = postBaseEndPoint + `/${postId}`;
 
     try {
       let response = await fetch(fetchURL, options);
@@ -98,14 +101,14 @@ function EditPost({ post }) {
 
     const options = {
       method: "DELETE",
-      headers: {
+      /*headers: {
         "Content-type": "application/json",
         Authorization:
           "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mzk2ZjBhOWM5NmRmYjAwMTUyMWE1YmMiLCJpYXQiOjE2NzA4MzYzOTMsImV4cCI6MTY3MjA0NTk5M30.tjYtW0usDncqSVyv5tqHhm6jzx297N87wMwUmb9BuAs",
-      },
+      },*/
     };
 
-    const fetchURL = `https://striveschool-api.herokuapp.com/api/posts/${postId}`;
+    const fetchURL = postBaseEndPoint + `/${postId}`;
 
     try {
       let response = await fetch(fetchURL, options);
