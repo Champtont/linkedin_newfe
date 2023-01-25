@@ -14,8 +14,9 @@ export const SET_EXPERIENCES_LOADED = "SET_EXPERIENCES_LOADED";
 export const PROFILE_POSTS_LIST = "PROFILE_POSTS_LIST";
 
 //end point stuff
-const baseEndPoint = "http://localhost:3002/users";
+const userBaseEndPoint = "http://localhost:3002/users";
 const thisUser = "/63ce8b0e38f02b88b50f552f";
+const postBaseEndPoint = "http://localhost:3002/posts";
 
 export const profilePostsListAction = (postedPost) => {
   return {
@@ -107,7 +108,7 @@ export const fetchUsers = () => {
           'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mzk2ZjBhOWM5NmRmYjAwMTUyMWE1YmMiLCJpYXQiOjE2NzA4MzYzOTMsImV4cCI6MTY3MjA0NTk5M30.tjYtW0usDncqSVyv5tqHhm6jzx297N87wMwUmb9BuAs',
       },*/
     };
-    const fetchURL = baseEndPoint;
+    const fetchURL = userBaseEndPoint;
 
     try {
       let response = await fetch(fetchURL, options);
@@ -138,7 +139,7 @@ export const fetchProfile = () => {
           "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mzk2ZjBhOWM5NmRmYjAwMTUyMWE1YmMiLCJpYXQiOjE2NzA4MzYzOTMsImV4cCI6MTY3MjA0NTk5M30.tjYtW0usDncqSVyv5tqHhm6jzx297N87wMwUmb9BuAs",
       },*/
     };
-    const fetchURL = baseEndPoint + thisUser;
+    const fetchURL = userBaseEndPoint + thisUser;
 
     try {
       let response = await fetch(fetchURL, options);
@@ -161,12 +162,12 @@ export const fetchExperiences = (userID) => {
     console.log(userID);
     const options = {
       method: "GET",
-      headers: {
+      /*headers: {
         Authorization:
           "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mzk2ZjBhOWM5NmRmYjAwMTUyMWE1YmMiLCJpYXQiOjE2NzA4MzYzOTMsImV4cCI6MTY3MjA0NTk5M30.tjYtW0usDncqSVyv5tqHhm6jzx297N87wMwUmb9BuAs",
-      },
+      },*/
     };
-    const fetchURL = `https://striveschool-api.herokuapp.com/api/profile/${userID}/experiences`;
+    const fetchURL = userBaseEndPoint + `/${userID}/experiences`;
 
     try {
       let response = await fetch(fetchURL, options);
@@ -192,11 +193,11 @@ export const editUser = (user) => {
       body: JSON.stringify({ user }),
       headers: {
         "Content-type": "application/json",
-        Authorization:
-          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mzk2ZjBhOWM5NmRmYjAwMTUyMWE1YmMiLCJpYXQiOjE2NzA4MzYzOTMsImV4cCI6MTY3MjA0NTk5M30.tjYtW0usDncqSVyv5tqHhm6jzx297N87wMwUmb9BuAs",
+        /* Authorization:
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mzk2ZjBhOWM5NmRmYjAwMTUyMWE1YmMiLCJpYXQiOjE2NzA4MzYzOTMsImV4cCI6MTY3MjA0NTk5M30.tjYtW0usDncqSVyv5tqHhm6jzx297N87wMwUmb9BuAs",*/
       },
     };
-    const fetchURL = "https://striveschool-api.herokuapp.com/api/profile/";
+    const fetchURL = userBaseEndPoint + thisUser;
 
     try {
       let response = await fetch(fetchURL, options);
@@ -218,12 +219,12 @@ export const getContactExperiences = (contactId) => {
     console.log("getting all the contact's experiences");
     const options = {
       method: "GET",
-      headers: {
+      /*headers: {
         Authorization:
           "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mzk2ZjBhOWM5NmRmYjAwMTUyMWE1YmMiLCJpYXQiOjE2NzA4MzYzOTMsImV4cCI6MTY3MjA0NTk5M30.tjYtW0usDncqSVyv5tqHhm6jzx297N87wMwUmb9BuAs",
-      },
+      },*/
     };
-    const fetchURL = `https://striveschool-api.herokuapp.com/api/profile/${contactId}/experiences`;
+    const fetchURL = userBaseEndPoint + `${contactId}/experiences`;
 
     try {
       const response = await fetch(fetchURL, options);
@@ -252,12 +253,12 @@ export const fetchPostsList = () => {
     console.log("We are fetching posts here");
     const options = {
       method: "GET",
-      headers: {
+      /*headers: {
         Authorization:
           "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mzk2ZjBhOWM5NmRmYjAwMTUyMWE1YmMiLCJpYXQiOjE2NzA4MzYzOTMsImV4cCI6MTY3MjA0NTk5M30.tjYtW0usDncqSVyv5tqHhm6jzx297N87wMwUmb9BuAs",
-      },
+      },*/
     };
-    const fetchURL = `https://striveschool-api.herokuapp.com/api/posts/`;
+    const fetchURL = postBaseEndPoint;
 
     try {
       let response = await fetch(fetchURL, options);
