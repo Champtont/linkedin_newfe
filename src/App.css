@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,700;1,200&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,700;1,200&display=swap");
 
 .App {
   text-align: center;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
 }
 #root {
   background-color: #f3f2ef;
@@ -80,6 +80,18 @@
 #lowerProfileCard {
   background-color: white;
   padding: 4em 1em 0em 1em;
+}
+#profileButtonBox {
+  position: relative;
+}
+#floatingProfileDropDown {
+  position: absolute;
+  top: -10px;
+  left: 310px;
+  background-color: white;
+  padding: 0.5em;
+  box-shadow: #c6c5c3 0px 0px 5px;
+  border-radius: 0px 10px 10px 10px;
 }
 #editButton {
   width: 50px;

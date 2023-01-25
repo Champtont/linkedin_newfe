@@ -1,6 +1,11 @@
 import { useSelector } from "react-redux";
 import Button from "react-bootstrap/Button";
 import EditModal from "./EditModal";
+import { AiOutlineDownload } from "react-icons/ai";
+import { Link } from "react-router-dom";
+
+//PDF Endpoint
+const pdfEndPoint = "_http://localhost:3002/users/63ce8b0e38f02b88b50f552f/pdf";
 
 const ProfileHeader = () => {
   const usersData = useSelector((state) => state.user.currentUser);
@@ -54,6 +59,18 @@ const ProfileHeader = () => {
             <EditModal />
           </div>
         </div>
+      </div>
+      <div id="profileButtonBox">
+        <Link to={pdfEndPoint}>
+          <div id="floatingProfileDropDown" className="">
+            <div className="d-flex">
+              <div className="mr-2">
+                <AiOutlineDownload />
+              </div>
+              <div>Save to PDF</div>
+            </div>
+          </div>
+        </Link>
       </div>
     </>
   );
