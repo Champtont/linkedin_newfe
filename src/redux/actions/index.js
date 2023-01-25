@@ -277,3 +277,9 @@ export const fetchPostsList = () => {
     }
   };
 };
+
+export const getPDF = () => {
+  return async (dispatch, getState) => {
+    console.log("We are creating your PDF here");
+  };
+};
