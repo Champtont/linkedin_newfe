@@ -6,6 +6,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import { useEffect } from "react";
 import { getContactExperiences } from "../redux/actions";
 import { useParams } from "react-router-dom";
+import BioBox from "./Bio";
 
 const Contact = () => {
   const params = useParams();
@@ -17,6 +18,7 @@ const Contact = () => {
         <div className=" d-flex justify-content-between">
           <div>
             <ContactUser />
+            <BioBox />
             <ExperienceContact />
           </div>
           <Col>

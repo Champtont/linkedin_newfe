@@ -12,6 +12,7 @@ import { fetchExperiences } from "../redux/actions";
 
 import LinkedInFooter from "./LinkedInFooter";
 import Analytics from "./Analytics";
+import BioBox from "./Bio";
 
 const Profile = () => {
   const dispatch = useDispatch();
@@ -30,6 +31,7 @@ const Profile = () => {
             <ProfileHeader />
             <ProfileSeePosts />
             <Analytics />
+            <BioBox />
             <Experience />
           </div>
           <Col xl={3}>

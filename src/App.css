@@ -152,6 +152,14 @@
   color: gray;
 }
 
+/*Bio Container Styling*/
+#bioContainer {
+  background-color: white;
+  padding: 1em;
+  border-radius: 10px;
+  box-shadow: #c6c5c3 0px 0px 5px;
+}
+
 /*Experience*/
 .companylogo {
   width: 60px;
