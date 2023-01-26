@@ -17,6 +17,7 @@ export const PROFILE_POSTS_LIST = "PROFILE_POSTS_LIST";
 const userBaseEndPoint = "http://localhost:3002/users";
 const thisUser = "/63ce8b0e38f02b88b50f552f";
 const postBaseEndPoint = "http://localhost:3002/posts";
+const pdfEndPoint = userBaseEndPoint + thisUser + "/pdf";
 
 export const profilePostsListAction = (postedPost) => {
   return {
@@ -272,6 +273,32 @@ export const fetchPostsList = () => {
           dispatch(setPostsLoaded());
         }, 3000);
       }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
+//fetch PDF and download it
+
+export const fetchPDFAction = () => {
+  return async (dispatch, getState) => {
+    console.log("I'm trying to get the PDF");
+
+    const fetchURL = pdfEndPoint;
+
+    try {
+      let response = await fetch(fetchURL)
+        .then((response) => response.blob())
+        .then((blob) => {
+          const url = window.URL.createObjectURL(new Blob([blob]));
+          const link = document.createElement("a");
+          link.href = url;
+          link.setAttribute("download", `myCV.pdf`);
+          document.body.appendChild(link);
+          link.click();
+          link.parentNode.removeChild(link);
+        });
     } catch (error) {
       console.log(error);
     }

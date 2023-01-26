@@ -3,12 +3,16 @@ import Button from "react-bootstrap/Button";
 import EditModal from "./EditModal";
 import { AiOutlineDownload } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import { fetchPDFAction } from "../redux/actions";
+import { useDispatch } from "react-redux";
 
 //PDF Endpoint
 
 const ProfileHeader = () => {
   const usersData = useSelector((state) => state.user.currentUser);
   const usersLoaded = useSelector((state) => state.user.usersLoaded);
+
+  const dispatch = useDispatch();
 
   return (
     <>
@@ -60,7 +64,7 @@ const ProfileHeader = () => {
         </div>
       </div>
       <div id="profileButtonBox">
-        <Link to="">
+        <Button onClick={dispatch(fetchPDFAction)}>
           <div id="floatingProfileDropDown" className="">
             <div className="d-flex">
               <div className="mr-2">
@@ -69,7 +73,7 @@ const ProfileHeader = () => {
               <div>Save to PDF</div>
             </div>
           </div>
-        </Link>
+        </Button>
       </div>
     </>
   );
