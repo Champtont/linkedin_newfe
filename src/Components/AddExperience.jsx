@@ -5,6 +5,11 @@ import { editUser, fetchProfile, fetchExperiences } from "../redux/actions";
 import { BsPlus } from "react-icons/bs";
 import axios from "axios";
 
+//Experience Endpoints
+
+const experienceBaseEndPoint =
+  "http://localhost:3002/users/63ce8b0e38f02b88b50f552f/experiences";
+
 function AddExperienceModal() {
   const dispatch = useDispatch();
   const usersData = useSelector((state) => state.user.currentUser);
@@ -73,11 +78,11 @@ function AddExperienceModal() {
       body: JSON.stringify(experience),
       headers: {
         "Content-type": "application/json",
-        Authorization:
-          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mzk2ZjBhOWM5NmRmYjAwMTUyMWE1YmMiLCJpYXQiOjE2NzA4MzYzOTMsImV4cCI6MTY3MjA0NTk5M30.tjYtW0usDncqSVyv5tqHhm6jzx297N87wMwUmb9BuAs",
+        /*Authorization:
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mzk2ZjBhOWM5NmRmYjAwMTUyMWE1YmMiLCJpYXQiOjE2NzA4MzYzOTMsImV4cCI6MTY3MjA0NTk5M30.tjYtW0usDncqSVyv5tqHhm6jzx297N87wMwUmb9BuAs",*/
       },
     };
-    const fetchURL = `https://striveschool-api.herokuapp.com/api/profile/${usersData._id}/experiences`;
+    const fetchURL = experienceBaseEndPoint;
 
     try {
       let response = await fetch(fetchURL, options);

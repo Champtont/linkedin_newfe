@@ -7,6 +7,10 @@ import { fetchExperiences } from "../redux/actions";
 import { useEffect } from "react";
 import { format } from "date-fns";
 
+//Experience End Point
+const experienceBaseEndPoint =
+  "http://localhost:3002/users/63ce8b0e38f02b88b50f552f/experiences";
+
 function EditExperienceModal(props) {
   console.log(props.experience);
   const dispatch = useDispatch();
@@ -80,11 +84,11 @@ function EditExperienceModal(props) {
       body: JSON.stringify(experience),
       headers: {
         "Content-type": "application/json",
-        Authorization:
-          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mzk2ZjBhOWM5NmRmYjAwMTUyMWE1YmMiLCJpYXQiOjE2NzA4MzYzOTMsImV4cCI6MTY3MjA0NTk5M30.tjYtW0usDncqSVyv5tqHhm6jzx297N87wMwUmb9BuAs",
+        /*Authorization:
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mzk2ZjBhOWM5NmRmYjAwMTUyMWE1YmMiLCJpYXQiOjE2NzA4MzYzOTMsImV4cCI6MTY3MjA0NTk5M30.tjYtW0usDncqSVyv5tqHhm6jzx297N87wMwUmb9BuAs",*/
       },
     };
-    const fetchURL = `https://striveschool-api.herokuapp.com/api/profile/${usersData._id}/experiences/${props.experience._id}`;
+    const fetchURL = experienceBaseEndPoint + `/${props.experience._id}`;
 
     try {
       let response = await fetch(fetchURL, options);
@@ -108,13 +112,13 @@ function EditExperienceModal(props) {
 
     const options = {
       method: "DELETE",
-      headers: {
+      /*headers: {
         "Content-type": "application/json",
         Authorization:
           "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mzk2ZjBhOWM5NmRmYjAwMTUyMWE1YmMiLCJpYXQiOjE2NzA4MzYzOTMsImV4cCI6MTY3MjA0NTk5M30.tjYtW0usDncqSVyv5tqHhm6jzx297N87wMwUmb9BuAs",
-      },
+      },*/
     };
-    const fetchURL = `https://striveschool-api.herokuapp.com/api/profile/${usersData._id}/experiences/${props.experience._id}`;
+    const fetchURL = experienceBaseEndPoint + `/${props.experience._id}`;
 
     try {
       let response = await fetch(fetchURL, options);
