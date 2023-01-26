@@ -136,6 +136,7 @@ function AddNewPost() {
               <img
                 className="news-post-profile-image ml-2"
                 src={currentUserData.image}
+                alt={currentUserData.name}
               />
               <div className="d-flex flex-column">
                 <p>

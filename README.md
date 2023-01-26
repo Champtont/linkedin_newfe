@@ -1,6 +1,6 @@
 # LinkedIn Clone, Part II
 
-On this project, we are building on top of a Frontend that was created by a previous group that I collaborated with. 
+On this project, we are building on top of a Frontend that was created by a previous group that I collaborated with.
 
 ## Available Scripts
 
@@ -13,4 +13,3 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
-

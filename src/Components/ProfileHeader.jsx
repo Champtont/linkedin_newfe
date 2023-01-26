@@ -4,12 +4,18 @@ import { AiOutlineDownload } from "react-icons/ai";
 import { useState } from "react";
 import { fetchPDFAction } from "../redux/actions";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router";
+
+//Endpoint
+const filesBaseEndPoint =
+  "http://localhost:3002/files/63ce8b0e38f02b88b50f552f/experiences/downloadCSV";
 
 const ProfileHeader = () => {
   const usersData = useSelector((state) => state.user.currentUser);
   const usersLoaded = useSelector((state) => state.user.usersLoaded);
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const [show, setShow] = useState(false);
 
@@ -90,7 +96,7 @@ const ProfileHeader = () => {
                 <div>Save to PDF</div>
               </div>
             </button>
-            <button onClick="">
+            <button>
               <div className="d-flex">
                 <div className="mr-2">
                   <AiOutlineDownload size={23} />
