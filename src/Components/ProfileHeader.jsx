@@ -1,18 +1,24 @@
 import { useSelector } from "react-redux";
-import Button from "react-bootstrap/Button";
 import EditModal from "./EditModal";
 import { AiOutlineDownload } from "react-icons/ai";
-import { Link } from "react-router-dom";
+import { useState } from "react";
 import { fetchPDFAction } from "../redux/actions";
 import { useDispatch } from "react-redux";
-
-//PDF Endpoint
 
 const ProfileHeader = () => {
   const usersData = useSelector((state) => state.user.currentUser);
   const usersLoaded = useSelector((state) => state.user.usersLoaded);
 
   const dispatch = useDispatch();
+
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => {
+    setShow(false);
+  };
+  const handleShow = () => {
+    setShow(true);
+  };
 
   return (
     <>
@@ -53,7 +59,17 @@ const ProfileHeader = () => {
               >
                 Add Profile Section
               </button>
-              <button id="moreBtn" className="rounded-pill bottomNavButtons">
+              <button
+                id="moreBtn"
+                className="rounded-pill bottomNavButtons"
+                onClick={() => {
+                  if (show === false) {
+                    handleShow();
+                  } else {
+                    handleClose();
+                  }
+                }}
+              >
                 More
               </button>
             </div>
@@ -64,16 +80,26 @@ const ProfileHeader = () => {
         </div>
       </div>
       <div id="profileButtonBox">
-        <Button onClick={dispatch(fetchPDFAction)}>
-          <div id="floatingProfileDropDown" className="">
-            <div className="d-flex">
-              <div className="mr-2">
-                <AiOutlineDownload />
+        {show === true && (
+          <div id="floatingProfileDropDown" className="d-flex">
+            <button onClick={dispatch(fetchPDFAction)}>
+              <div className="d-flex">
+                <div className="mr-2">
+                  <AiOutlineDownload size={23} />
+                </div>
+                <div>Save to PDF</div>
               </div>
-              <div>Save to PDF</div>
-            </div>
+            </button>
+            <button onClick="">
+              <div className="d-flex">
+                <div className="mr-2">
+                  <AiOutlineDownload size={23} />
+                </div>
+                <div>Save to CSV</div>
+              </div>
+            </button>
           </div>
-        </Button>
+        )}
       </div>
     </>
   );
