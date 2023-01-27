@@ -18,7 +18,7 @@ import { profilePostsListAction } from "../redux/actions";
 import axios from "axios";
 
 //endpoint stuff
-const postBaseEndPoint = "http://localhost:3002/posts";
+const postBaseEndPoint = "https://linkedinbe-production.up.railway.app/posts";
 const thisUser = "63ce8b0e38f02b88b50f552f";
 
 function AddNewPost() {

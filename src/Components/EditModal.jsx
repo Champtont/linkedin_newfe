@@ -20,7 +20,7 @@ function EditModal({ data }) {
   const [isFilePicked, setisFilePicked] = useState(false);
 
   //endpoint stuff
-  const userBaseEndPoint = "http://localhost:3002/users";
+  const userBaseEndPoint = "https://linkedinbe-production.up.railway.app/users";
   const thisUser = "/63ce8b0e38f02b88b50f552f";
 
   const changeFileHandler = (event) => {

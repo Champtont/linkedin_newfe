@@ -22,7 +22,7 @@ import { BsPencil } from "react-icons/bs";
 import { useEffect } from "react";
 
 //endpoint stuff
-const postBaseEndPoint = "http://localhost:3002/posts";
+const postBaseEndPoint = "https://linkedinbe-production.up.railway.app/posts";
 
 function EditPost({ post }) {
   const dispatch = useDispatch();

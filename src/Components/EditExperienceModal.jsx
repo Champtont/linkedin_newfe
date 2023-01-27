@@ -9,7 +9,7 @@ import { format } from "date-fns";
 
 //Experience End Point
 const experienceBaseEndPoint =
-  "http://localhost:3002/users/63ce8b0e38f02b88b50f552f/experiences";
+  "https://linkedinbe-production.up.railway.app/users/63ce8b0e38f02b88b50f552f/experiences";
 
 function EditExperienceModal(props) {
   console.log(props.experience);

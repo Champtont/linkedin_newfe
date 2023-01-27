@@ -8,7 +8,7 @@ import { useNavigate } from "react-router";
 
 //Endpoint
 const filesBaseEndPoint =
-  "http://localhost:3002/files/63ce8b0e38f02b88b50f552f/experiences/downloadCSV";
+  "https://linkedinbe-production.up.railway.app/files/63ce8b0e38f02b88b50f552f/experiences/downloadCSV";
 
 const ProfileHeader = () => {
   const usersData = useSelector((state) => state.user.currentUser);
