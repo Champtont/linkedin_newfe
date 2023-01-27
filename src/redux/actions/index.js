@@ -271,7 +271,7 @@ export const fetchPostsList = () => {
         dispatch(getPostsListAction(postsList.reverse()));
         setTimeout(() => {
           dispatch(setPostsLoaded());
-        }, 3000);
+        }, 3500);
       }
     } catch (error) {
       console.log(error);
