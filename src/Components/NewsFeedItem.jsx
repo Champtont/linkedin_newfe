@@ -8,7 +8,7 @@ import { IoIosSend } from "react-icons/io";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-const NewsFeedItem = ({ posts }) => {
+const NewsFeedItem = ({ post }) => {
   const likes = Math.floor(Math.random() * 200);
 
   const [Likes, setLikes] = useState(likes);
@@ -23,7 +23,7 @@ const NewsFeedItem = ({ posts }) => {
       setliked(true);
     }
   };
-  console.log("THIS IS WHAT YOU CAME FOR: " + posts.user.image);
+  console.log("THIS IS WHAT YOU CAME FOR: " + post.user.image);
   return (
     <>
       <div className="news-feed-post mt-3">
@@ -32,7 +32,7 @@ const NewsFeedItem = ({ posts }) => {
             <Link to={"/profile"}>
               <img
                 className="news-post-profile-image ml-2"
-                src={posts.user.image}
+                src={post.user.image}
               />
             </Link>
           </div>
@@ -41,14 +41,14 @@ const NewsFeedItem = ({ posts }) => {
             <div>
               <small>
                 <strong>
-                  {posts.user.name} {posts.user.surname}
+                  {post.user.name} {post.user.surname}
                 </strong>
               </small>{" "}
               <BsDot className="mt-1" /> <small>3rd+</small>
             </div>
             <div>
-              <small>{posts.user.username}</small> <BsDash className="mt-1" />{" "}
-              <small>{posts.user.title}</small>
+              <small>{post.user.username}</small> <BsDash className="mt-1" />{" "}
+              <small>{post.user.title}</small>
             </div>
           </div>
         </Row>
@@ -57,13 +57,13 @@ const NewsFeedItem = ({ posts }) => {
             className="d-flex flex-column px-2 pb-2"
             /*style={{ paddingLeft: ".5em", paddingRight: ".5em" }}*/
           >
-            {posts.text}
+            {post.text}
           </div>
           <div style={{ width: "100%" }}>
             <img
               className="mb-3 img-fluid"
               src={
-                posts.image ? `${posts.image}` : "https://picsum.photos/505/300"
+                post.image ? `${post.image}` : "https://picsum.photos/505/300"
               }
               style={{ width: "100%", height: "100%", objectFit: "cover" }}
             />

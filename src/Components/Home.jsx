@@ -49,7 +49,9 @@ const Home = () => {
       setSlice(6);
 
       setDisplayPosts(
-        postsList.map((post) => <NewsFeedItem key={post._id} post={post} />)
+        postsList[0]
+          .slice(0, slice)
+          .map((post) => <NewsFeedItem key={post._id} post={post} />)
       );
 
       setHasMore(true);
