@@ -2,6 +2,8 @@
 
 On this project, we are building on top of a Frontend that was created by a previous group that I collaborated with.
 
+Here, you will find a link to the Back End Repo: https://github.com/Champtont/linkedin_be
+
 ## Available Scripts
 
 In the project directory, you can run:
