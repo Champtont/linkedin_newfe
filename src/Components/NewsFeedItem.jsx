@@ -23,14 +23,17 @@ const NewsFeedItem = ({ post }) => {
       setliked(true);
     }
   };
-  console.log("THIS IS WHAT YOU CAME FOR: " + post);
+  console.log("THIS IS WHAT YOU CAME FOR: " + post[0].user.image);
   return (
     <>
       <div className="news-feed-post mt-3">
         <Row>
           <div>
             <Link to={"/profile"}>
-              <img className="news-post-profile-image ml-2" src={post} />
+              <img
+                className="news-post-profile-image ml-2"
+                src={post.user.image}
+              />
             </Link>
           </div>
 
@@ -38,14 +41,14 @@ const NewsFeedItem = ({ post }) => {
             <div>
               <small>
                 <strong>
-                  {post} {post}
+                  {post.user.name} {post.user.surname}
                 </strong>
               </small>{" "}
               <BsDot className="mt-1" /> <small>3rd+</small>
             </div>
             <div>
-              <small>{post}</small> <BsDash className="mt-1" />{" "}
-              <small>{post}</small>
+              <small>{post.user.username}</small> <BsDash className="mt-1" />{" "}
+              <small>{post.user.title}</small>
             </div>
           </div>
         </Row>
