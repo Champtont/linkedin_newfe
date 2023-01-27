@@ -23,7 +23,7 @@ const NewsFeedItem = ({ post }) => {
       setliked(true);
     }
   };
-  console.log("THIS IS WHAT YOU CAME FOR: " + post[0].user.image);
+  console.log("THIS IS WHAT YOU CAME FOR: " + post.user.image);
   return (
     <>
       <div className="news-feed-post mt-3">
