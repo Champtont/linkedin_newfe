@@ -15,6 +15,9 @@ const mainReducer = combineReducers({
 const persistConfig = {
   key: "root",
   storage: localStorage,
+  transforms: [
+    encryptTransform({ secretKey: process.env.REACT_APP_PRIVACY_KEY }),
+  ],
 };
 
 const peristedReducer = persistReducer(persistConfig, mainReducer);
