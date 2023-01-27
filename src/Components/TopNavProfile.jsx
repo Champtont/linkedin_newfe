@@ -13,7 +13,7 @@ const TopNavProfile = () => {
         <HiUserCircle size={20} />
       </div>
       <NavDropdown title="Me" id="basic-nav-dropdown">
-        {currentUserData.length > 0 && (
+        {currentUserData && (
           <div className="dropdown-item">
             <div className="d-flex flex-column firstnavitem">
               <div className="d-flex mb-2">
