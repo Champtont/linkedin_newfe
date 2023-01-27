@@ -96,14 +96,16 @@ const ProfileHeader = () => {
                 <div>Save to PDF</div>
               </div>
             </button>
-            <button>
-              <div className="d-flex">
-                <div className="mr-2">
-                  <AiOutlineDownload size={23} />
+            <a href="https://linkedinbe-production.up.railway.app/files/63ce8b0e38f02b88b50f552f/experiences/downloadCSV">
+              <button>
+                <div className="d-flex">
+                  <div className="mr-2">
+                    <AiOutlineDownload size={23} />
+                  </div>
+                  <div>Save to CSV</div>
                 </div>
-                <div>Save to CSV</div>
-              </div>
-            </button>
+              </button>
+            </a>
           </div>
         )}
       </div>
