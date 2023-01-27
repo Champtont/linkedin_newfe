@@ -267,7 +267,7 @@ export const fetchPostsList = () => {
       if (response.ok) {
         console.log("Fetch Successful");
         let postsList = await response.json();
-        console.log(postsList);
+        console.log("LOOKY HERE:" + postsList);
         dispatch(getPostsListAction(postsList.reverse()));
         setTimeout(() => {
           dispatch(setPostsLoaded());
