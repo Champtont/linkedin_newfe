@@ -13,31 +13,33 @@ const TopNavProfile = () => {
         <HiUserCircle size={20} />
       </div>
       <NavDropdown title="Me" id="basic-nav-dropdown">
-        <div className="dropdown-item">
-          <div className="d-flex flex-column firstnavitem">
-            <div className="d-flex mb-2">
-              <div>
-                <HiUserCircle size={48} />
+        {currentUserData.length > 0 && (
+          <div className="dropdown-item">
+            <div className="d-flex flex-column firstnavitem">
+              <div className="d-flex mb-2">
+                <div>
+                  <HiUserCircle size={48} />
+                </div>
+                <div>
+                  <p className="m-0">
+                    {currentUserData.name} {currentUserData.surname}
+                  </p>
+                  <p className="m-0">
+                    <small>{currentUserData.title}</small>
+                  </p>
+                </div>
               </div>
-              <div>
-                <p className="m-0">
-                  {currentUserData.name} {currentUserData.surname}
-                </p>
-                <p className="m-0">
-                  <small>{currentUserData.title}</small>
-                </p>
-              </div>
+              <Button
+                className="rounded-pill"
+                onClick={() => {
+                  navigate("/Profile");
+                }}
+              >
+                View Profile
+              </Button>
             </div>
-            <Button
-              className="rounded-pill"
-              onClick={() => {
-                navigate("/Profile");
-              }}
-            >
-              View Profile
-            </Button>
           </div>
-        </div>
+        )}
         <NavDropdown.Divider />
       </NavDropdown>
     </>
