@@ -30,10 +30,7 @@ const NewsFeedItem = ({ post }) => {
         <Row>
           <div>
             <Link to={"/profile"}>
-              <img
-                className="news-post-profile-image ml-2"
-                src={post.user.image}
-              />
+              <img className="news-post-profile-image ml-2" src={post} />
             </Link>
           </div>
 
@@ -41,14 +38,14 @@ const NewsFeedItem = ({ post }) => {
             <div>
               <small>
                 <strong>
-                  {post.user.name} {post.user.surname}
+                  {post} {post}
                 </strong>
               </small>{" "}
               <BsDot className="mt-1" /> <small>3rd+</small>
             </div>
             <div>
-              <small>{post.user.username}</small> <BsDash className="mt-1" />{" "}
-              <small>{post.user.title}</small>
+              <small>{post}</small> <BsDash className="mt-1" />{" "}
+              <small>{post}</small>
             </div>
           </div>
         </Row>
