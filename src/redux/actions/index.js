@@ -14,9 +14,10 @@ export const SET_EXPERIENCES_LOADED = "SET_EXPERIENCES_LOADED";
 export const PROFILE_POSTS_LIST = "PROFILE_POSTS_LIST";
 
 //end point stuff
-const userBaseEndPoint = "https://linkedinbe-production.up.railway.app/users";
+export const baseAPI = `${process.env.REACT_APP_BASE_API}`;
+const userBaseEndPoint = `${baseAPI}/users`;
 const thisUser = "/63ce8b0e38f02b88b50f552f";
-const postBaseEndPoint = "https://linkedinbe-production.up.railway.app/posts";
+const postBaseEndPoint = `${baseAPI}/posts`;
 const pdfEndPoint = userBaseEndPoint + thisUser + "/pdf";
 
 export const profilePostsListAction = (postedPost) => {
