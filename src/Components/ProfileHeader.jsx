@@ -2,13 +2,12 @@ import { useSelector } from "react-redux";
 import EditModal from "./EditModal";
 import { AiOutlineDownload } from "react-icons/ai";
 import { useState } from "react";
-import { fetchPDFAction } from "../redux/actions";
+import { fetchPDFAction, baseAPI } from "../redux/actions";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router";
 
 //Endpoint
-const filesBaseEndPoint =
-  "https://linkedinbe-production.up.railway.app/files/63ce8b0e38f02b88b50f552f/experiences/downloadCSV";
+const filesBaseEndPoint = `${baseAPI}/files/63ce8b0e38f02b88b50f552f/experiences/downloadCSV`;
 
 const ProfileHeader = () => {
   const usersData = useSelector((state) => state.user.currentUser);
