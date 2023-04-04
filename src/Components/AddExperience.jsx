@@ -4,11 +4,11 @@ import { useSelector, useDispatch } from "react-redux";
 import { editUser, fetchProfile, fetchExperiences } from "../redux/actions";
 import { BsPlus } from "react-icons/bs";
 import axios from "axios";
+import { baseAPI } from "../redux/actions";
 
 //Experience Endpoints
 
-const experienceBaseEndPoint =
-  "https://linkedinbe-production.up.railway.app/users/63ce8b0e38f02b88b50f552f/experiences";
+const experienceBaseEndPoint = `${baseAPI}/users/63ce8b0e38f02b88b50f552f/experiences`;
 
 function AddExperienceModal() {
   const dispatch = useDispatch();

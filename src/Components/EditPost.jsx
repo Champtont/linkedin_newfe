@@ -20,9 +20,10 @@ import {
 } from "../redux/actions";
 import { BsPencil } from "react-icons/bs";
 import { useEffect } from "react";
+import { baseAPI } from "../redux/actions";
 
 //endpoint stuff
-const postBaseEndPoint = "https://linkedinbe-production.up.railway.app/posts";
+const postBaseEndPoint = `${baseAPI}/posts`;
 
 function EditPost({ post }) {
   const dispatch = useDispatch();

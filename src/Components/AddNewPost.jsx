@@ -16,9 +16,10 @@ import EmojiPicker from "emoji-picker-react";
 import ImageUpload from "./ImageUpload";
 import { profilePostsListAction } from "../redux/actions";
 import axios from "axios";
+import { baseAPI } from "../redux/actions";
 
 //endpoint stuff
-const postBaseEndPoint = "https://linkedinbe-production.up.railway.app/posts";
+const postBaseEndPoint = `${baseAPI}/posts`;
 const thisUser = "63ce8b0e38f02b88b50f552f";
 
 function AddNewPost() {

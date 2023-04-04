@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { editUser, fetchProfile } from "../redux/actions";
 import { BsPencil } from "react-icons/bs";
 import axios from "axios";
+import { baseAPI } from "../redux/actions";
 
 function EditModal({ data }) {
   const dispatch = useDispatch();
@@ -20,7 +21,7 @@ function EditModal({ data }) {
   const [isFilePicked, setisFilePicked] = useState(false);
 
   //endpoint stuff
-  const userBaseEndPoint = "https://linkedinbe-production.up.railway.app/users";
+  const userBaseEndPoint = `${baseAPI}/users`;
   const thisUser = "/63ce8b0e38f02b88b50f552f";
 
   const changeFileHandler = (event) => {

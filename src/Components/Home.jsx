@@ -48,11 +48,11 @@ const Home = () => {
     setTimeout(() => {
       setSlice(6);
 
-      setDisplayPosts(
+      /*setDisplayPosts(
         postsList[0].posts
           .slice(0, slice)
           .map((post) => <NewsFeedItem key={post._id} post={post} />)
-      );
+      );*/
 
       setHasMore(true);
     }, 2000);
@@ -115,15 +115,10 @@ const Home = () => {
                     </a>
                   </span>
                 </div>
-
-                <InfiniteScroll
-                  dataLength={displayPosts.length}
-                  next={addSlice}
-                  hasMore={hasMore}
-                  loader={BarLoader(hasMore)}
-                >
-                  <div className="feed mb-5">{displayPosts}</div>
-                </InfiniteScroll>
+                {postsList[0] !== null &&
+                  postsList[0].posts.map((post) => (
+                    <NewsFeedItem key={post._id} post={post} />
+                  ))}
               </Row>
             </Col>
             <Col lg={3} className="px-0">

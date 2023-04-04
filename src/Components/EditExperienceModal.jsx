@@ -6,10 +6,10 @@ import { BsPencil } from "react-icons/bs";
 import { fetchExperiences } from "../redux/actions";
 import { useEffect } from "react";
 import { format } from "date-fns";
+import { baseAPI } from "../redux/actions";
 
 //Experience End Point
-const experienceBaseEndPoint =
-  "https://linkedinbe-production.up.railway.app/users/63ce8b0e38f02b88b50f552f/experiences";
+const experienceBaseEndPoint = `${baseAPI}/users/63ce8b0e38f02b88b50f552f/experiences`;
 
 function EditExperienceModal(props) {
   console.log(props.experience);
