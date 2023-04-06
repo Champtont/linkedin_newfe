@@ -270,6 +270,9 @@ export const fetchPostsList = () => {
         let postsList = await response.json();
         getState(postsList);
         dispatch(getPostsListAction(postsList));
+        setTimeout(() => {
+          dispatch(setPostsLoaded());
+        }, 3500);
       }
     } catch (error) {
       console.log(error);

@@ -9,7 +9,7 @@ const initialState = {
   posts: {
     postsList: [],
     currentPost: null,
-    postsLoaded: true,
+    postsLoaded: false,
     profilePosts: [],
   },
 };
@@ -30,7 +30,7 @@ const postsReducer = (state = initialState, action) => {
         ...state,
         posts: {
           ...state.posts,
-          postsList: [action.payload],
+          postsList: [...action.payload],
         },
       };
 
