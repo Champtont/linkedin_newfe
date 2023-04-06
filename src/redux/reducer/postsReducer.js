@@ -9,7 +9,7 @@ const initialState = {
   posts: {
     postsList: [],
     currentPost: null,
-    postsLoaded: false,
+    postsLoaded: true,
     profilePosts: [],
   },
 };
