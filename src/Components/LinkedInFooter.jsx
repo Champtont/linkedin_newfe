@@ -119,7 +119,7 @@ const LinkedInFooter = () => {
                 </Col>
                 <Col className="p-0">
                   <label
-                    for="footerLangSelector"
+                    htmlFor="footerLangSelector"
                     className="d-block mb-0"
                     style={{ fontSize: "10pt", color: "gray" }}
                   >
