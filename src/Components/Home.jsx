@@ -94,7 +94,7 @@ const Home = () => {
 
   return (
     <>
-      {postsList !== null ? (
+      {postsList.length > 0 ? (
         <Container>
           <Row className="mt-4">
             <Col lg={3} className="pr-0">
